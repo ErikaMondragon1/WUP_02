@@ -59,6 +59,7 @@ ggplot(data, aes(x = Cult, y = VitC)) +
 
 ```
 
+This boxplot shows the VitC of c39 and c52. c52 has a greater amount of VitC than c39 by 13-14 more IUs. 
 
 ### Numerical Descriptive Results
 
@@ -78,19 +79,22 @@ summary_stats
 
 ```
 
+This table shows the averages of IUs between c39 and c52. The average of c39 is 51.5 IUs and the average of c52 is 64.4 IUs 
 
 ## Inferential Results
 
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
 
 ```{r}
-# Perform ANOVA to test for group differences 
-anova_result <- aov(VitC ~ Cult, data = data)
-summary(anova_result)
-
+t.test(VitC~Cult,data=veggy)
 ```
 
+The p-value is 0.00000003405, because the p-value is less than 0.05 so we reject the null hypothesis.
 
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+
+The original question was, is there a difference in average VitC between c39 and c52 cultivation methods? 
+In conclusion, the p-value of the T-test is 0.00000003405, since the p-value is less than 0.05, we reject the null hypothesis that there is no difference in the vitamin C content of cabbages based on cultivation method. We conclude that there is a difference in average VitC between c39 and c52 cultivation methods, c52 is the better cultivation method as it results in more VitC than c39.  
+
